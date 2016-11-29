@@ -198,5 +198,7 @@ if [ -f /etc/iptables.downrules ]; then
 fi
 exit 0
 EOF
+chmod +x /etc/network/if-post-down.d/iptablessave
+chmod +x /etc/network/if-pre-up.d/iptablesload
 
 /etc/init.d/keepalived start
