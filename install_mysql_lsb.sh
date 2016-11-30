@@ -168,6 +168,16 @@ echo 0 > /proc/sys/net/ipv4/tcp_ecn
 echo 1 > /proc/sys/net/ipv4/tcp_sack
 echo 0 > /proc/sys/net/ipv4/tcp_dsack
 
+grep -q '^\*\s*soft\s*nofile' /etc/security/limits.conf
+if [ $? -ne 0 ]; then
+    sed -i '$i*     soft    nofile  65535' /etc/security/limits.conf
+fi
+grep -q '^\*\s*hard\s*nofile' /etc/security/limits.conf
+if [ $? -ne 0 ]; then
+    sed -i '$i*     hard    nofile  65535' /etc/security/limits.conf
+fi
+ulimit -SHn 65535
+
 cat > /etc/iptables.rules <<EOF
 *filter
 :INPUT ACCEPT [0:0]
