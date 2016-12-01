@@ -142,9 +142,9 @@ listen  galera
         mode tcp
         option tcpka
         option mysql-check user haproxy #CREATE USER 'haproxy'@'192.168.0.%'
-        server node1 192.168.0.249:3306 check weight 1
-        server node2 192.168.0.250:3306 check weight 1
-        server node2 192.168.0.251:3306 check weight 1
+        server MySQL-249 192.168.0.249:3306 check weight 1
+        server MySQL-250 192.168.0.250:3306 check weight 1
+        server MySQL-251 192.168.0.251:3306 check weight 1
 
 listen  haproxy_stats
         mode http
