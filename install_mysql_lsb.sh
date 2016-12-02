@@ -53,6 +53,10 @@ vrrp_instance VI_1 {
 #       nopreempt
 #       debug
 
+	track_interface {
+        	$interface
+    	}
+
 	authentication {
                 auth_type PASS
                 auth_pass keepalive
