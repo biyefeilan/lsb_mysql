@@ -165,7 +165,7 @@ echo 30 > /proc/sys/net/ipv4/tcp_fin_timeout
 echo 4096 > /proc/sys/net/ipv4/tcp_max_syn_backlog
 echo 262144 > /proc/sys/net/ipv4/tcp_max_tw_buckets
 echo 262144 > /proc/sys/net/ipv4/tcp_max_orphans
-echo 300 > /proc/sys/net/ipv4/tcp_keepalive_time
+echo 21600 > /proc/sys/net/ipv4/tcp_keepalive_time
 echo 1 > /proc/sys/net/ipv4/tcp_tw_recycle
 echo 0 > /proc/sys/net/ipv4/tcp_timestamps
 echo 0 > /proc/sys/net/ipv4/tcp_ecn
